@@ -96,6 +96,7 @@ fun ARView(modifier: Modifier = Modifier) {
             engine = engine,
             modelLoader = modelLoader,
             planeRenderer = true,
+            onViewCreated = { scene.indirectLight?.intensity = 50_000f },
             onSessionUpdated = { session, sessionFrame -> frame = sessionFrame },
             sessionConfiguration = { session, config ->
                 Log.d("AR", "AR session configured – plane mode=${config.planeFindingMode}")
